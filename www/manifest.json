@@ -1,0 +1,18 @@
+
+        {
+          "name": "ABC School Lite",
+          "short_name": "ABC School",
+          "start_url": "index.html",
+          "display": "standalone",
+          "icons":[{"src": "data/images/background/transparent.png"}],
+          "prefer_related_applications": true,
+          "related_applications": [
+            {
+              "platform": "play",
+              "id": "com.imabuilder.madagency.abcschool"
+            }
+          ],
+         "background_color": "#dddddd",
+         "theme_color": "default"
+        }
+                

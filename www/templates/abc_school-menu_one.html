@@ -1,0 +1,37 @@
+	<ion-view view-title=" ABC school Крылатское" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll  id="page-menu_one" class="page-menu_one">
+		
+<!-- code refresh -->
+<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+<!-- ./code refresh -->
+
+
+<ion-list class="padding gmapmarker-search" >
+	<div class="item item-input">
+		<i class="icon ion-search placeholder-icon"></i>
+		<input type="search" ng-model="filter_menu_ones" placeholder="Search" aria-label="filter menu_ones" />
+	</div>
+</ion-list>
+
+<ng-map draggable="true" class="gmapmarker-map" map-type-id="ROADMAP" zoom="19" center="55.805058,37.610038" width="100%" height="100%" default-style="false">
+	<marker ng-repeat="item in data_menu_ones | filter:filter_menu_ones as results" on-click="openModal($event)" position="{{item.location}}" clickable="true" id="{{item.id}}" ></marker>
+</ng-map>
+
+
+<script id="menu_one-single.html" type="text/ng-template">
+	<ion-modal-view>
+		<ion-header-bar class="bar bar-header light bar-balanced-900">
+			<div class="header-item title">{{ menu_one.title | to_trusted }}</div>
+			<div class="buttons buttons-right header-item"><span class="right-buttons"><button class="button button-icon button-clear ion-close ink-black" ng-click="modal.hide()"></button></span></div>
+		</ion-header-bar>
+		<ion-content>
+		  <div class="item item-text-wrap noborder to_trusted" ng-bind-html="menu_one.description | strHTML"></div>
+		</ion-content>
+	</ion-modal-view>
+</script>
+    
+    
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>
